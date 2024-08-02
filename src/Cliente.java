@@ -11,11 +11,7 @@ public class Cliente extends Pessoa {
         pedidos.add(pedido);
     }
     public void cancelarPedido(Pedido pedido){
-        for (Pedido p : pedidos){
-            if (pedido == p){
-                pedidos.remove(p);
-            }
-        }
+        pedidos.remove(pedido);
     }
 
 

@@ -39,5 +39,13 @@ public class Main {
         garcom1.removerItemDoPedido(pedido1, 1);
         cliente1.vizualizarPedidos();
 
+        cliente1.cancelarPedido(pedido1);
+
+
+        cliente1.vizualizarPedidos();
+        garcom1.cadastrarPedido(cliente1, pedido1);
+        cliente1.vizualizarPedidos();
+        garcom1.confirmarPedido(pedido1);
+        cliente1.vizualizarPedidos();
     }
 }
