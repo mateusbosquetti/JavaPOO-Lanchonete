@@ -13,6 +13,13 @@ public class Bebida extends Produto {
 
     @Override
     public String exibirDetalhes() {
-        return null;
+        return toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Bebida{" +
+                "volume=" + volume +
+                '}';
     }
 }
