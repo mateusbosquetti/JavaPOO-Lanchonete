@@ -7,21 +7,18 @@ public class Cliente extends Pessoa {
         super(nome, endereco, telefone);
     }
 
-    public void fazerPedido(Pedido pedido){
+    public void fazerPedido(Pedido pedido) {
         pedidos.add(pedido);
     }
-    public void cancelarPedido(Pedido pedido){
+
+    public void cancelarPedido(Pedido pedido) {
         pedidos.remove(pedido);
     }
 
 
-    public void vizualizarPedidos(){
+    public void vizualizarPedidos() {
         System.out.println(pedidos);
     }
-
-
-
-
 
 
 }

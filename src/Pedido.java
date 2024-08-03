@@ -9,21 +9,23 @@ public class Pedido {
         this.cliente = cliente;
     }
 
-    public void adicionarItem(Produto item){
+    public void adicionarItem(Produto item) {
         itens.add(item);
     }
-    public void removerItem(int codigo){
+
+    public void removerItem(int codigo) {
         itens.remove(codigo);
     }
-    public double calcularTotal(){
+
+    public double calcularTotal() {
         int total = 0;
-        for(Produto i : itens){
-            total+=i.getPreco();
+        for (Produto i : itens) {
+            total += i.getPreco();
         }
         return total;
     }
 
-    public void confirmarPedido(){
+    public void confirmarPedido() {
         System.out.println("Pedido feito!");
         itens.clear();
     }

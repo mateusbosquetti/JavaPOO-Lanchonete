@@ -8,11 +8,17 @@ public class Outro extends Produto {
 
     @Override
     public double calcularPreco(double desconto) {
-        return 0;
+        return getPreco() - getPreco() * (desconto / 100);
     }
 
     @Override
     public String exibirDetalhes() {
-        return null;
+        return toString();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nOutro " +
+                "tamanho: " + tamanho;
     }
 }

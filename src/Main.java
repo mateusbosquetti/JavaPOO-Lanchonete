@@ -1,51 +1,75 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int opcaoInicial, opcaoProduto;
 
-        Produto bebida1 = new Bebida("bebida teste", 10.0,2);
-        Produto lanche1 = new Lanche("lanche teste", 30.5,500);
-        Produto outro1 = new Outro("Outro teste", 100.0, "Medio");
-        Produto combo1 = new Combo("Combo teste", 200.25,10);
+        System.out.println("Bem vindo ao sistema de gerenciamento de pedidos da lanchonete TopLanch!");
+        do {
 
-        System.out.println("Imprimir produtos");
-        System.out.println(bebida1.toString());
-        System.out.println(lanche1.toString());
-        System.out.println(outro1.toString());
-        System.out.println(combo1.toString());
+            System.out.print("Digite a opção que você quer acessar!\n" +
+                    "__________________________________\n" +
+                    "| Cod | Descricao                |\n" +
+                    "|  1  | Produtos do cardápio     |\n" +
+                    "|  2  | Pessoas                  |\n" +
+                    "|  4  | Ações de Garçom          |\n" +
+                    "|  5  | Sair                     |\n" +
+                    "----------------------------------\n" +
+                    "R: ");
+            opcaoInicial = sc.nextInt();
 
-        GerenciadorDeCardapio gerenciadorDeCardapio = new GerenciadorDeCardapio();
+            switch (opcaoInicial) {
+                case 1:
+                    System.out.println("Bem vindo a aba de Produtos do cardápio!");
+                    System.out.println("" +
+                            "__________________________________\n" +
+                            "| Cod | Descricao                |\n" +
+                            "|  1  | Adicionar Produtos       |\n" +
+                            "|  2  | Remover Produtos         |\n" +
+                            "|  3  | Editar Produtos          |\n" +
+                            "|  4  | Listar Produtos          |\n" +
+                            "|  5  | Voltar                   |\n" +
+                            "----------------------------------\n" +
+                            "R: ");
+                    opcaoProduto = sc.nextInt();
 
-        gerenciadorDeCardapio.adicionarProduto(bebida1);
-        gerenciadorDeCardapio.adicionarProduto(lanche1);
-        gerenciadorDeCardapio.adicionarProduto(outro1);
-        gerenciadorDeCardapio.adicionarProduto(combo1);
+                    switch (opcaoProduto) {
+                        case 1:
+                            // Metodo adicionar Produto
+                            break;
+                        case 2:
+                            // Metodo remover Produto
+                            break;
+                        case 3:
+                            // Metodo editar Produto
+                            break;
+                        case 4:
+                            // Metodo listar Produto
+                            break;
+                        case 5:
+                            //Voltar
+                            break;
+                        default:
+                            System.out.println("Opção inválida");
+                    }
+                    break;
+                case 2:
 
-        System.out.println("\nImprimir produtos do cardapio");
-        System.out.println(gerenciadorDeCardapio.listarProdutos());
+                    break;
+                case 3:
 
-        gerenciadorDeCardapio.removerProduto(3);
-        gerenciadorDeCardapio.editarProduto(2,bebida1);
-        System.out.println("\nImprimir produtos do cardapio após alterações");
-        System.out.println(gerenciadorDeCardapio.listarProdutos());
+                    break;
+                case 4:
 
-        //Certo
+                    break;
+                case 5:
 
-        Cliente cliente1 = new Cliente("Cliente1", "ClienteEndereco1", 123);
-        Garcom garcom1 = new Garcom("Garcom1", "GarcomEndereco1",123,5);
-        Pedido pedido1 = new Pedido(cliente1);
-        garcom1.cadastrarPedido(cliente1, pedido1);
-        garcom1.adicionarItemAoPedido(pedido1, bebida1);
-        garcom1.adicionarItemAoPedido(pedido1, lanche1);
-        System.out.println(garcom1.calcularPagamento(pedido1));
-        garcom1.removerItemDoPedido(pedido1, 1);
-        cliente1.vizualizarPedidos();
+                    break;
+                default:
+                    System.out.println("Opção inválida");
+            }
 
-        cliente1.cancelarPedido(pedido1);
-
-
-        cliente1.vizualizarPedidos();
-        garcom1.cadastrarPedido(cliente1, pedido1);
-        cliente1.vizualizarPedidos();
-        garcom1.confirmarPedido(pedido1);
-        cliente1.vizualizarPedidos();
+        } while (opcaoInicial != 5);
     }
 }

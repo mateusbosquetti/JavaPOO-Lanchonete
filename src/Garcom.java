@@ -8,6 +8,7 @@ public class Garcom extends Pessoa {
 
     public void cadastrarPedido(Cliente cliente, Pedido pedido){
         cliente.fazerPedido(pedido);
+        this.pagamento += pagamento * 0.05;
     }
 
     public String exibirMenu(){

@@ -20,14 +20,14 @@ public abstract class Produto {
     }
 
     public abstract double calcularPreco(double desconto); //retorna o preco do produto com desconto ja
+
     public abstract String exibirDetalhes(); //retorna os detalhes do produto
 
     @Override
     public String toString() {
-        return "Produto{" +
-                "codigo='" + codigo + '\'' +
-                "descricao='" + descricao + '\'' +
-                ", preco=" + preco +
-                '}';
+        return "Produto " +
+                "codigo: " + codigo +
+                "descricao: " + descricao +
+                ", preco: " + preco;
     }
 }

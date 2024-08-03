@@ -8,7 +8,7 @@ public class Bebida extends Produto {
 
     @Override
     public double calcularPreco(double desconto) {
-        return 0;
+        return getPreco() - getPreco() * (desconto / 100);
     }
 
     @Override
@@ -18,8 +18,7 @@ public class Bebida extends Produto {
 
     @Override
     public String toString() {
-        return "Bebida{" +
-                "volume=" + volume +
-                '}';
+        return super.toString() + "\nBebida " +
+                "volume: " + volume;
     }
 }
